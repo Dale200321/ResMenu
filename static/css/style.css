@@ -1,0 +1,84 @@
+/* Custom CSS Stylesheet for Restaurant Menu Website */
+:root {
+    --primary-color: #d9534f; /* Warm red accent */
+    --secondary-color: #2c3e50; /* Deep charcoal */
+    --light-color: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--secondary-color);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.home-hero {
+    position: relative;
+    height: 100vh;
+    min-height: 480px;
+    background: linear-gradient(135deg, var(--secondary-color), #1a252f);
+    overflow: hidden;
+}
+
+.home-hero-carousel,
+.home-hero-carousel-inner,
+.home-hero-carousel .carousel-item {
+    height: 100%;
+}
+
+.hero-carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 2rem 1rem;
+}
+
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+
+.price-tag {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    padding: 30px 0;
+}
+
+.category-filter .btn.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+.food-detail-image {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact - {{ RESTAURANT_NAME }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4 text-center">Contact Us</h1>
+    <div class="row g-5">
+        <div class="col-md-5">
+            <h5>Visit Us</h5>
+            <p>{{ RESTAURANT_ADDRESS }}</p>
+
+            <h5>Call Us</h5>
+            <p>{{ RESTAURANT_PHONE }}</p>
+
+            <h5>Email Us</h5>
+            <p>{{ RESTAURANT_EMAIL }}</p>
+
+            <h5>Opening Hours</h5>
+            <p>{{ RESTAURANT_HOURS }}</p>
+        </div>
+        <div class="col-md-7">
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="mb-3">
+                        <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                        {{ field }}
+                        {% if field.errors %}
+                            <div class="text-danger small">{{ field.errors }}</div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

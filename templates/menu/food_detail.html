@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ item.name }} - {{ RESTAURANT_NAME }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <a href="{% url 'menu:menu_list' %}" class="btn btn-link ps-0 mb-3">&larr; Back to Menu</a>
+    <div class="row g-4">
+        <div class="col-md-6">
+            {% if item.image %}
+                <img src="{{ item.image.url }}" alt="{{ item.name }}" class="food-detail-image">
+            {% else %}
+                <div class="food-detail-image bg-light d-flex align-items-center justify-content-center text-muted">
+                    No image available
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+            <span class="badge bg-secondary mb-2">{{ item.category.name }}</span>
+            <h1>{{ item.name }}</h1>
+            <p class="price-tag">${{ item.price }}</p>
+            <p>{{ item.description }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
